@@ -4,7 +4,7 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import scala.collection.mutable.ArrayBuffer
 
-class DegiroImporter:
+class DegiroImporter extends Importer:
   def importTransactions(transactions: String): Iterable[Transaction] =
     val result = ArrayBuffer[Transaction]()
     for (line <- transactions split "\n" filterNot(_.isEmpty) drop 1) {
